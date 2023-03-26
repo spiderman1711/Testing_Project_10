@@ -1,0 +1,8 @@
+.metadata/.*
+.project
+version.ini
+.classpath
+org.eclipse.core.resources.prefs
+org.eclipse.jdt.core.prefs
+/target/
+pom.xml
