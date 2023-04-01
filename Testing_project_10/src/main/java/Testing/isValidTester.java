@@ -104,9 +104,61 @@ class isValidTester {
 	    assertEquals(expected,actual);
 	}
 	
+	@Test
+	void testA13() {
+		boolean expected = false;
+		Verfication verfication = new Verfication();
+		boolean actual = verfication.isValidSubjectCode("cse%28s");
+	    assertEquals(expected,actual);
+	}
 	
+	@Test
+	void testA14() {
+		boolean expected = false;
+		Verfication verfication = new Verfication();
+		boolean actual = verfication.isValidSubjectCode("123cses");
+	    assertEquals(expected,actual);
+	}
 	
+	@Test
+	void testA15() {
+		boolean expected = false;
+		Verfication verfication = new Verfication();
+		boolean actual = verfication.isValidSubjectCode("123Cses");
+	    assertEquals(expected,actual);
+	}
 	
+	@Test
+	void testA16() {
+		boolean expected = false;
+		Verfication verfication = new Verfication();
+		boolean actual = verfication.isValidSubjectCode("123CSEs");
+	    assertEquals(expected,actual);
+	}
+	
+	@Test
+	void testA17() {
+		boolean expected = false;
+		Verfication verfication = new Verfication();
+		boolean actual = verfication.isValidSubjectCode("123cseg");
+	    assertEquals(expected,actual);
+	}
+	
+	@Test
+	void testA18() {
+		boolean expected = false;
+		Verfication verfication = new Verfication();
+		boolean actual = verfication.isValidSubjectCode("12cse3s");
+	    assertEquals(expected,actual);
+	}
+	
+	@Test
+	void testA19() {
+		boolean expected = false;
+		Verfication verfication = new Verfication();
+		boolean actual = verfication.isValidSubjectCode("123cses");
+	    assertEquals(expected,actual);
+	}
 	
 	
 }
