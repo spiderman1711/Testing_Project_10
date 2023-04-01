@@ -50,7 +50,7 @@ public boolean isValidSubjectCode(String code) {
 
 
 
-public boolean isValidFullMark(int mark) {
+public boolean isValidFullMark(double mark) {
     return mark == 100;
 }
 
