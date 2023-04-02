@@ -5,13 +5,21 @@
 
 package com.mycompany.testing_project_10;
 
+import models.Student;
+
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+
 /**
  *
  * @author Youssef
  */
 public class Testing_project_10 {
 
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
+    public static void main(String[] args) throws FileNotFoundException {
+        Csv_Reader cr = new Csv_Reader();
+        ArrayList<Student> studentList;
+        studentList = cr.csv_parsing("C:\\Users\\abdoa\\Desktop\\New Text Document.csv");
+        System.out.println(studentList.get(0).getName());
     }
 }
