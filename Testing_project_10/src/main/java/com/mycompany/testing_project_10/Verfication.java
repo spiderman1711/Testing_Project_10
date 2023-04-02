@@ -78,7 +78,7 @@ public boolean isValidStudentNumber(String number) {
    if(number==null||number.length()!=8||!Character.isDigit(number.charAt(0))){
        return false;
    } 
-   for(int i=1;i<7;i++){
+   for(int i=0;i<7;i++){
        if(!Character.isDigit(number.charAt(i))){
            return false;
        } 
