@@ -6,3 +6,5 @@ org.eclipse.core.resources.prefs
 org.eclipse.jdt.core.prefs
 /target/
 pom.xml
+Testing_project_10/target/
+*.xml
