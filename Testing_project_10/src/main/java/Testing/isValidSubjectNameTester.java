@@ -6,9 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import com.mycompany.testing_project_10.Verfication;
 
-
-class isValidTester 
-{
+class isValidSubjectNameTester {
 
 	@Test
 	void test1() {
@@ -33,10 +31,14 @@ class isValidTester
 		boolean actual = verfication.isValidSubjectName("Maths");
 	    assertEquals(expected,actual);
 	}
-
+	
+	@Test
+	void test4() {
+		boolean expected = true;
+		Verfication verfication = new Verfication();
+		boolean actual = verfication.isValidSubjectName("maths");
 	    assertEquals(expected,actual);
 	}
-	
 
 	@Test
 	void test5() {
@@ -69,4 +71,5 @@ class isValidTester
 		boolean actual = verfication.isValidSubjectName("%%##@!*");
 	    assertEquals(expected,actual);
 	}
+
 }
