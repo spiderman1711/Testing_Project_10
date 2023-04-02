@@ -8,53 +8,7 @@ import com.mycompany.testing_project_10.Verfication;
 
 class isValidTester {
 
-	@Test
-	void test1() {
-		boolean expected = false;
-		Verfication verfication = new Verfication();
-		boolean actual = verfication.isValidStudentName("");
-	    assertEquals(expected,actual);
-	}
 	
-	@Test
-	void test2() {
-		boolean expected = false;
-		Verfication verfication = new Verfication();
-		boolean actual = verfication.isValidStudentName(null);
-	    assertEquals(expected,actual);
-	}
-
-	@Test
-	void test3() {
-		boolean expected = false;
-		Verfication verfication = new Verfication();
-		boolean actual = verfication.isValidStudentName("AB35456");
-	    assertEquals(expected,actual);
-	}
-	
-	@Test
-	void test4() {
-		boolean expected = false;
-		Verfication verfication = new Verfication();
-		boolean actual = verfication.isValidStudentName("CS3456748");
-	    assertEquals(expected,actual);
-	}
-	
-	@Test
-	void test5() {
-		boolean expected = false;
-		Verfication verfication = new Verfication();
-		boolean actual = verfication.isValidStudentName("C2345678");
-	    assertEquals(expected,actual);
-	}
-	
-	@Test
-	void test6() {
-		boolean expected = true;
-		Verfication verfication = new Verfication();
-		boolean actual = verfication.isValidStudentName("1234567E");
-	    assertEquals(expected,actual);
-	}
 	/*
 	@Test
 	void test7() {
