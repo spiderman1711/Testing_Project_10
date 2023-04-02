@@ -86,4 +86,13 @@ class isValidTester {
 		boolean actual = verfication.isValidFullMark(12345678);
 	    assertEquals(expected,actual);
 	}
+	
+	@Test
+	void test11() {
+		boolean expected = false;
+		Verfication verfication = new Verfication();
+		boolean actual = verfication.isValidFullMark(-100);
+	    assertEquals(expected,actual);
+	}
+	
 }
