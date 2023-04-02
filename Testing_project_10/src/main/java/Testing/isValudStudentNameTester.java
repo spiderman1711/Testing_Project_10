@@ -1,20 +1,19 @@
 package Testing;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
 import com.mycompany.testing_project_10.Verfication;
 
-
-class isValidTester 
-{
+class isValudStudentNameTester {
 
 	@Test
 	void test1() {
 		boolean expected = false;
 		Verfication verfication = new Verfication();
-		boolean actual = verfication.isValidSubjectName("");
+		boolean actual = verfication.isValidStudentName("");
 	    assertEquals(expected,actual);
 	}
 
@@ -22,7 +21,7 @@ class isValidTester
 	void test2() {
 		boolean expected = false;
 		Verfication verfication = new Verfication();
-		boolean actual = verfication.isValidSubjectName(null);
+		boolean actual = verfication.isValidStudentName(null);
 	    assertEquals(expected,actual);
 	}
  
@@ -30,19 +29,23 @@ class isValidTester
 	void test3() {
 		boolean expected = true;
 		Verfication verfication = new Verfication();
-		boolean actual = verfication.isValidSubjectName("Maths");
-	    assertEquals(expected,actual);
-	}
-
+		boolean actual = verfication.isValidStudentName("TOM");
 	    assertEquals(expected,actual);
 	}
 	
+	@Test
+	void test4() {
+		boolean expected = true;
+		Verfication verfication = new Verfication();
+		boolean actual = verfication.isValidStudentName("tom");
+	    assertEquals(expected,actual);
+	}
 
 	@Test
 	void test5() {
 		boolean expected = true;
 		Verfication verfication = new Verfication();
-		boolean actual = verfication.isValidSubjectName("Introduction to Mathematics");
+		boolean actual = verfication.isValidStudentName("Tom Holland");
 	    assertEquals(expected,actual);
 	}
 	
@@ -50,7 +53,7 @@ class isValidTester
 	void test6() {
 		boolean expected = false;
 		Verfication verfication = new Verfication();
-		boolean actual = verfication.isValidSubjectName("Maths123");
+		boolean actual = verfication.isValidStudentName("Tom123");
 	    assertEquals(expected,actual);
 	}
 	
@@ -58,7 +61,7 @@ class isValidTester
 	void test7() {
 		boolean expected = false;
 		Verfication verfication = new Verfication();
-		boolean actual = verfication.isValidSubjectName("1234");
+		boolean actual = verfication.isValidStudentName("1234");
 	    assertEquals(expected,actual);
 	}
 	
@@ -66,7 +69,8 @@ class isValidTester
 	void test8() {
 		boolean expected = false;
 		Verfication verfication = new Verfication();
-		boolean actual = verfication.isValidSubjectName("%%##@!*");
+		boolean actual = verfication.isValidStudentName("%%##@!*");
 	    assertEquals(expected,actual);
 	}
+
 }
