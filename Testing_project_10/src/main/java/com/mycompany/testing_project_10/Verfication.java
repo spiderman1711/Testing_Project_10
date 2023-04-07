@@ -50,7 +50,7 @@ public boolean isValidSubjectCode(String code) {
 
 
 
-public boolean isValidFullMark(int mark) {
+public boolean isValidFullMark(double mark) {
     return mark == 100;
 }
 
@@ -93,7 +93,7 @@ public boolean isValidStudentNumber(String number) {
 
 
 
-public boolean isValidActivitiesMark(int mark, int fullMark) { 
+public boolean isValidActivitiesMark(double mark, int fullMark) { 
    return mark >= 0 && mark <=10 && fullMark==100; 
 }
 
@@ -101,7 +101,7 @@ public boolean isValidActivitiesMark(int mark, int fullMark) {
 
 
 
-public boolean isValidOralPracticalMark(int mark, int fullMark){ 
+public boolean isValidOralPracticalMark(double mark, int fullMark){ 
    return mark >= 0 && mark <=10 && fullMark==100; 
 }
 
@@ -109,7 +109,7 @@ public boolean isValidOralPracticalMark(int mark, int fullMark){
 
 
 
-public boolean isValidMidtermExamMark(int mark, int fullMark){ 
+public boolean isValidMidtermExamMark(double mark, int fullMark){ 
    return mark >= 0 && mark <=20 && fullMark==100; 
 }
 
@@ -117,7 +117,7 @@ public boolean isValidMidtermExamMark(int mark, int fullMark){
 
 
 
-public boolean isValidFinalExamMark(int mark, int fullMark){ 
+public boolean isValidFinalExamMark(double mark, int fullMark){ 
    return mark >= 0 && mark <=60 && fullMark==100;  
 }
     
