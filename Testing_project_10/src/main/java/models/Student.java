@@ -2,7 +2,7 @@ package models;
 
 public class Student {
     private String name;
-    private int number;
+    private String number;
     private double activitiesMark;
     private double oralOrPracticalMark;
     private double midTermMark;
@@ -13,7 +13,7 @@ public class Student {
     private double gpa;
     private String grade;
     
-    public Student(String name, int number, double activitiesMark, double oralOrPracticalMark, double midTermMark, double finalMark) {
+    public Student(String name, String number, double activitiesMark, double oralOrPracticalMark, double midTermMark, double finalMark) {
         this.name = name;
         this.number = number;
         this.activitiesMark = activitiesMark;
@@ -32,11 +32,11 @@ public class Student {
         this.name = name;
     }
 
-    public int getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 

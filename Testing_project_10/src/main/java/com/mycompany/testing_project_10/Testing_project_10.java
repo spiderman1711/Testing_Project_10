@@ -9,6 +9,7 @@ import models.Student;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import models.Subject;
 
 /**
  *
@@ -18,8 +19,13 @@ public class Testing_project_10 {
 
     public static void main(String[] args) throws FileNotFoundException {
         Csv_Reader cr = new Csv_Reader();
+        
+        Subject subject;
         ArrayList<Student> studentList;
-        studentList = cr.csv_parsing("C:\\Users\\abdoa\\Desktop\\New Text Document.csv");
-        System.out.println(studentList.get(0).getName());
+        
+        subject = cr.getSubject("C:\\Users\\abdoa\\Desktop\\New Text Document.csv");
+        studentList = cr.csv_parsing("C:\\Users\\abdoa\\Desktop\\New Text Document.csv");        
+
+        
     }
 }
