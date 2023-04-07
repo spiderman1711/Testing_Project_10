@@ -78,7 +78,7 @@ public boolean isValidStudentNumber(String number) {
    if(number==null||number.length()!=8||!Character.isDigit(number.charAt(0))){
        return false;
    } 
-   for(int i=1;i<7;i++){
+   for(int i=0;i<7;i++){
        if(!Character.isDigit(number.charAt(i))){
            return false;
        } 
@@ -92,33 +92,44 @@ public boolean isValidStudentNumber(String number) {
 
 
 
+public boolean isValidActivitiesMark(double mark, double fullMark) { 
+        double result = mark/fullMark * 100;
 
-public boolean isValidActivitiesMark(double mark, int fullMark) { 
-   return mark >= 0 && mark <=10 && fullMark==100; 
+        return result >= 0 && result <= 10;
+    }
+
+
+
+
+
+
+public boolean isValidOralPracticalMark(double mark, double fullMark) { 
+        double result = mark/fullMark * 100;
+
+        return result >= 0 && result <= 10;
+    }
+
+
+
+
+
+
+public boolean isValidMidtermExamsMark(double mark, double fullMark) { 
+    double result = mark/fullMark * 100;
+
+    return result >= 0 && result <= 20;
 }
 
 
 
 
 
-public boolean isValidOralPracticalMark(double mark, int fullMark){ 
-   return mark >= 0 && mark <=10 && fullMark==100; 
+
+public boolean isValidFinalExamMark(double mark, double fullMark) { 
+    double result = mark/fullMark * 100;
+
+    return result >= 0 && result <= 60;
 }
 
-
-
-
-
-public boolean isValidMidtermExamMark(double mark, int fullMark){ 
-   return mark >= 0 && mark <=20 && fullMark==100; 
-}
-
-
-
-
-
-public boolean isValidFinalExamMark(double mark, int fullMark){ 
-   return mark >= 0 && mark <=60 && fullMark==100;  
-}
     
 }
