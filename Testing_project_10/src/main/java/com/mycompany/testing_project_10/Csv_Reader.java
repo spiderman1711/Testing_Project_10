@@ -16,9 +16,10 @@ public class Csv_Reader {
         String line;
         Subject subject;
 
-        Scanner sc = new Scanner(new File(path));
+        //Scanner sc = new Scanner(new File(path));
 //        if(sc.hasNextLine()){
-        line = sc.nextLine();
+        //line = sc.nextLine();
+        line = path;
         String[] sList = line.split(",");
 
         String subjectName =  sList[0];
@@ -27,7 +28,7 @@ public class Csv_Reader {
 
         subject = new Subject(subjectName, subjectCode, subjectFullMarkNumber);
 //        }
-        sc.close();
+        //sc.close();
         return subject;
     }
     
@@ -43,13 +44,14 @@ public class Csv_Reader {
         // parse first time
         if(sc.hasNextLine()){
             line = sc.nextLine();
+            /*
             String[] sList = line.split(",");
-            
             String subjectName =  sList[0];
             String subjectCode = sList[1];
-            double subjectFullMarkNumber = Double.parseDouble(sList[2]);    
-            
+            double subjectFullMarkNumber = Double.parseDouble(sList[2]);
             subject = new Subject(subjectName, subjectCode, subjectFullMarkNumber);
+            */
+            subject = getSubject(line);
         }
 
         while (sc.hasNextLine()) {
@@ -70,7 +72,7 @@ public class Csv_Reader {
             boolean isValidOralOrPracticalMark = verification.isValidOralPracticalMark(activitiesMark, subject.getFullMark());
             
             double midTermMark = Double.parseDouble(wList[4]);
-            boolean isValidMidTermMark = verification.isValidMidtermExamMark(midTermMark, subject.getFullMark());
+            boolean isValidMidTermMark = verification.isValidMidtermExamsMark(midTermMark, subject.getFullMark());
             
             double finalMark = Double.parseDouble(wList[5]);
             boolean isValidFinalMark = verification.isValidFullMark(finalMark);
