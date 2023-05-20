@@ -15,8 +15,8 @@ public class Csv_Reader {
     Subject getSubject(String path)  throws FileNotFoundException {
         String line;
         Subject subject;
-
-        Scanner sc = new Scanner(new File(path));
+        
+        Scanner sc = new Scanner(new File(System.getProperty("user.dir") + "\\" + path));
 
         line = sc.nextLine();
         String[] sList = line.split(",");
@@ -32,12 +32,12 @@ public class Csv_Reader {
     }
     
     
-    ArrayList<Student> csv_parsing(String path) throws FileNotFoundException {
+    	public ArrayList<Student> csv_parsing(String path) throws FileNotFoundException {
         Subject subject = new Subject("1", "1", 100);
         ArrayList<Student> studentList = new ArrayList<>();
         String line, word;
 
-        Scanner sc = new Scanner(new File(path));
+        Scanner sc = new Scanner(new File(System.getProperty("user.dir") + "\\" + path));
         Verfication verification = new Verfication();
         // parse first time
         if(sc.hasNextLine()){
