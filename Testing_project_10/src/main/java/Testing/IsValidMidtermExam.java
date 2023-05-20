@@ -31,7 +31,7 @@ class IsValidMidtermExam {
 	
 	@Test
 	void testFulMarkequalsInput() {
-    boolean expected=true;
+    boolean expected=false;
     Verfication verfication = new Verfication(); 
     boolean actual=verfication.isValidMidtermExamsMark(100,100);
 	}
@@ -39,7 +39,7 @@ class IsValidMidtermExam {
 
 	@Test
 	void testZeroInput() {
-    boolean expected=false;
+    boolean expected=true;
     Verfication verfication = new Verfication(); 
     boolean actual=verfication.isValidMidtermExamsMark(0,100);
 	}

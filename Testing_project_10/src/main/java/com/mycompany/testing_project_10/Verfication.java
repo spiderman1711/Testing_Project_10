@@ -116,7 +116,7 @@ public boolean isValidOralPracticalMark(double mark, double fullMark) {
 
 public boolean isValidMidtermExamsMark(double mark, double fullMark) { 
     double result = mark/fullMark * 100;
-
+    
     return result >= 0 && result <= 20;
 }
 
