@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import com.mycompany.testing_project_10.Verfication;
 
-// applying the black box testing using the boundry value analysis
+//applying the black box testing using the boundry value analysis
 //between 0 and 10 
 class isValidActivitiesMark {
 
@@ -16,14 +16,16 @@ class isValidActivitiesMark {
     boolean expected=true;
     Verfication verfication = new Verfication(); 
     boolean actual=verfication.isValidActivitiesMark(10,100);
+    assertEquals(expected,actual,"Verfication::Inavalid Mark");
 	}
 	
 	@Test
 	// Min value
 	void test2() {
-    boolean expected=false;
+    boolean expected=true;
     Verfication verfication = new Verfication(); 
     boolean actual=verfication.isValidActivitiesMark(0,100);
+    assertEquals(expected,actual,"Verfication::Inavalid Mark");
 	}
 	
 	// Min value -1
@@ -32,6 +34,7 @@ class isValidActivitiesMark {
     boolean expected=false;
     Verfication verfication = new Verfication(); 
     boolean actual=verfication.isValidActivitiesMark(-1,100);
+    assertEquals(expected,actual,"Verfication::Inavalid Mark");
 	}
 	
 	@Test
@@ -40,6 +43,7 @@ class isValidActivitiesMark {
     boolean expected=false;
     Verfication verfication = new Verfication(); 
     boolean actual=verfication.isValidActivitiesMark(11,100);
+    assertEquals(expected,actual,"Verfication::Inavalid Mark");
 	}
 	
 	
@@ -49,6 +53,7 @@ class isValidActivitiesMark {
     boolean expected=true;
     Verfication verfication = new Verfication(); 
     boolean actual=verfication.isValidActivitiesMark(6.5,100);
+    assertEquals(expected,actual,"Verfication::Inavalid Mark");
 	}
 	
 	@Test
@@ -57,6 +62,7 @@ class isValidActivitiesMark {
     boolean expected=true;
     Verfication verfication = new Verfication(); 
     boolean actual=verfication.isValidActivitiesMark(9,100);
+    assertEquals(expected,actual,"Verfication::Inavalid Mark");
 	}
 	
 	
@@ -66,12 +72,14 @@ class isValidActivitiesMark {
     boolean expected=true;
     Verfication verfication = new Verfication(); 
     boolean actual=verfication.isValidActivitiesMark(1,100);
- }
+    assertEquals(expected,actual,"Verfication::Inavalid Mark");
+	}
 
 	@Test
 	void TestThefullMark() {
     boolean expected=false;
     Verfication verfication = new Verfication(); 
     boolean actual=verfication.isValidActivitiesMark(100,100);
+    assertEquals(expected,actual,"Verfication::Inavalid Mark");
 	}
 }
