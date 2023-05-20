@@ -6,158 +6,141 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+// using the white box testig we apply the statement coverage test
 
 class isValidSubjectCodeTester {
+	
+	// first if = false , enters the loop , second if = false , third if = false
 	@Test
 	void testA1() {
-		boolean expected = false;
-		Verfication verfication = new Verfication();
-		boolean actual = verfication.isValidSubjectCode("");
-	    assertEquals(expected,actual);
-	}
-	
-	@Test
-	void testA2() {
-		boolean expected = false;
-		Verfication verfication = new Verfication();
-		boolean actual = verfication.isValidSubjectCode(null);
-	    assertEquals(expected,actual);
-	}
-
-	@Test
-	void testA3() {
-		boolean expected = false;
-		Verfication verfication = new Verfication();
-		boolean actual = verfication.isValidSubjectCode("A2345");
-	    assertEquals(expected,actual);
-	}
-	
-	@Test
-	void testA4() {
-		boolean expected = false;
-		Verfication verfication = new Verfication();
-		boolean actual = verfication.isValidSubjectCode("CS345678");
-	    assertEquals(expected,actual);
-	}
-	
-	@Test
-	void testA5() {
-		boolean expected = false;
-		Verfication verfication = new Verfication();
-		boolean actual = verfication.isValidSubjectCode("CSE5678");
-	    assertEquals(expected,actual);
-	}
-	
-	@Test
-	void testA6() {
-		boolean expected = false;
-		Verfication verfication = new Verfication();
-		boolean actual = verfication.isValidSubjectCode("Cse457g");
-	    assertEquals(expected,actual);
-	}
-	
-	@Test
-	void testA7() {
-		boolean expected = true;
-		Verfication verfication = new Verfication();
-		boolean actual = verfication.isValidSubjectCode("Cse457s");
-	    assertEquals(expected,actual);
-	}
-	
-	@Test
-	void testA8() {
 		boolean expected = true;
 		Verfication verfication = new Verfication();
 		boolean actual = verfication.isValidSubjectCode("CSE123s");
-	    assertEquals(expected,actual);
+	    assertEquals(expected,actual,"Verfication::Invalid Subject Code");
 	}
 	
-	@Test
-	void testA9() {
+	void testA2() {
 		boolean expected = true;
 		Verfication verfication = new Verfication();
-		boolean actual = verfication.isValidSubjectCode("cse765s");
-	    assertEquals(expected,actual);
+		boolean actual = verfication.isValidSubjectCode("CSE123");
+		 assertEquals(expected,actual,"Verfication::Invalid Subject Code");
 	}
-	
+	//Test cases for the first "if" statement is true
 	@Test
-	void testA10() {
-		boolean expected = true;
-		Verfication verfication = new Verfication();
-		boolean actual = verfication.isValidSubjectCode("cSe128s");
-	    assertEquals(expected,actual);
-	}
-	
-	@Test
-	void testA11() {
+	void testB1() {
 		boolean expected = false;
 		Verfication verfication = new Verfication();
-		boolean actual = verfication.isValidSubjectCode("cse%28s");
-	    assertEquals(expected,actual);
+		boolean actual = verfication.isValidSubjectCode("null");
+		assertEquals(expected,actual,"Verfication::Invalid Subject Code");
+	}
+	
+	
+	@Test
+	void testB2() {
+		boolean expected = false;
+		Verfication verfication = new Verfication();
+		boolean actual = verfication.isValidSubjectCode("");
+		assertEquals(expected,actual,"Verfication::Invalid Subject Code");
 	}
 	
 	@Test
-	void testA12() {
+	void testB3() {
 		boolean expected = false;
 		Verfication verfication = new Verfication();
-		boolean actual = verfication.isValidSubjectCode("c@e128s");
-	    assertEquals(expected,actual);
+		boolean actual = verfication.isValidSubjectCode("ABC1234");
+		assertEquals(expected,actual,"Verfication::Invalid Subject Code");
+		}
+	
+
+	@Test
+	void testB4() {
+		boolean expected = false;
+		Verfication verfication = new Verfication();
+		boolean actual = verfication.isValidSubjectCode("CSE56");
+	    assertEquals(expected,actual,"Verfication::Invalid Subject Code");
+	}
+	
+	
+	@Test
+	//Test cases for the second "if" statement is true
+	void testC1() {
+		boolean expected = false;
+		Verfication verfication = new Verfication();
+		boolean actual = verfication.isValidSubjectCode("CS1234");
+	    assertEquals(expected,actual,"Verfication::Invalid Subject Code");	}
+	
+	@Test
+	void testC2() {
+		boolean expected = false;
+		Verfication verfication = new Verfication();
+		boolean actual = verfication.isValidSubjectCode("C12345");
+    	assertEquals(expected,actual,"Verfication::Invalid Subject Code");
 	}
 	
 	@Test
-	void testA13() {
+	void testC3() {
 		boolean expected = false;
 		Verfication verfication = new Verfication();
-		boolean actual = verfication.isValidSubjectCode("cse%28s");
-	    assertEquals(expected,actual);
+		boolean actual = verfication.isValidSubjectCode("123456");
+	    assertEquals(expected,actual,"Verfication::Invalid Subject Code");
 	}
 	
+	
+	
+	//Test case for the third "if" statement is true
 	@Test
-	void testA14() {
+	void testD1() {
 		boolean expected = false;
 		Verfication verfication = new Verfication();
-		boolean actual = verfication.isValidSubjectCode("123cses");
-	    assertEquals(expected,actual);
-	}
+		boolean actual = verfication.isValidSubjectCode("CSECSE");
+		assertEquals(expected,actual,"Verfication::Invalid Subject Code");
+		}
 	
 	@Test
-	void testA15() {
+	void testD2() {
 		boolean expected = false;
 		Verfication verfication = new Verfication();
-		boolean actual = verfication.isValidSubjectCode("123Cses");
-	    assertEquals(expected,actual);
-	}
+		boolean actual = verfication.isValidSubjectCode("CSE12E");
+		assertEquals(expected,actual,"Verfication::Invalid Subject Code");
+		}
 	
 	@Test
-	void testA16() {
+	void testD3() {
 		boolean expected = false;
 		Verfication verfication = new Verfication();
-		boolean actual = verfication.isValidSubjectCode("123CSEs");
-	    assertEquals(expected,actual);
-	}
+		boolean actual = verfication.isValidSubjectCode("CSE2SE");
+		assertEquals(expected,actual,"Verfication::Invalid Subject Code");
+		}
 	
 	@Test
-	void testA17() {
+	void testD4() {
 		boolean expected = false;
 		Verfication verfication = new Verfication();
-		boolean actual = verfication.isValidSubjectCode("123cseg");
-	    assertEquals(expected,actual);
+		boolean actual = verfication.isValidSubjectCode("CSEC2E");
+	    assertEquals(expected,actual,"Verfication::Invalid Subject Code");
 	}
 	
-	@Test
-	void testA18() {
+	//Test case for the forth "if" statement is true
+		@Test
+	void testE1() {
 		boolean expected = false;
 		Verfication verfication = new Verfication();
-		boolean actual = verfication.isValidSubjectCode("12cse3s");
-	    assertEquals(expected,actual);
-	}
+		boolean actual = verfication.isValidSubjectCode("CSE123#");
+		assertEquals(expected,actual,"Verfication::Invalid Subject Code");
+		}
+	void testE2() {
+		boolean expected = false;
+		Verfication verfication = new Verfication();
+		boolean actual = verfication.isValidSubjectCode("CSE123g");
+	    assertEquals(expected,actual,"Verfication::Invalid Subject Code");
+		}
 	
-	@Test
-	void testA19() {
+	void testE3() {
 		boolean expected = false;
 		Verfication verfication = new Verfication();
-		boolean actual = verfication.isValidSubjectCode("123cses");
-	    assertEquals(expected,actual);
-	}
+		boolean actual = verfication.isValidSubjectCode("CSE1231");
+		assertEquals(expected,actual,"Verfication::Invalid Subject Code");
+		}		
+	
 
 }
