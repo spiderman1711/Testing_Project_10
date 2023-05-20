@@ -150,4 +150,11 @@ public class Student {
             this.gpa = 0.0;
         }        
     }
+
+	@Override
+	public String toString() {
+		return name + "," + number + "," + gpa + "," + grade;
+	}
+    
+    
 }
