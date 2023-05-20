@@ -12,10 +12,10 @@ import models.Subject;
 
 public class Csv_Reader {
     
-    public Subject getSubject(String path)  throws FileNotFoundException {
+    Subject getSubject(String path)  throws FileNotFoundException {
         String line;
-        Subject subject;
-        
+        Subject subject = null;
+        Verfication verification = new Verfication();
         Scanner sc = new Scanner(new File(System.getProperty("user.dir") + "\\" + path));
 
         line = sc.nextLine();
@@ -24,15 +24,16 @@ public class Csv_Reader {
         String subjectName =  sList[0];
         String subjectCode = sList[1];
         double subjectFullMarkNumber = Double.parseDouble(sList[2]);    
-
-        subject = new Subject(subjectName, subjectCode, subjectFullMarkNumber);
-
+        if(verification.isValidSubjectName(subjectName) && verification.isValidSubjectCode(subjectCode) && verification.isValidFullMark(subjectFullMarkNumber)) {
+        	subject = new Subject(subjectName, subjectCode, subjectFullMarkNumber);
+        }
+        
         sc.close();
         return subject;
     }
     
     
-    ArrayList<Student> csv_parsing(String path) throws FileNotFoundException {
+    	public ArrayList<Student> csv_parsing(String path) throws FileNotFoundException {
         Subject subject = new Subject("1", "1", 100);
         ArrayList<Student> studentList = new ArrayList<>();
         String line, word;
