@@ -17,7 +17,7 @@ public class Csv_Reader {
         Subject subject;
 
         Scanner sc = new Scanner(new File(path));
-//        if(sc.hasNextLine()){
+
         line = sc.nextLine();
         String[] sList = line.split(",");
 
@@ -26,20 +26,19 @@ public class Csv_Reader {
         double subjectFullMarkNumber = Double.parseDouble(sList[2]);    
 
         subject = new Subject(subjectName, subjectCode, subjectFullMarkNumber);
-//        }
+
         sc.close();
         return subject;
     }
     
     
     ArrayList<Student> csv_parsing(String path) throws FileNotFoundException {
-        Subject subject;
+        Subject subject = new Subject("1", "1", 100);
         ArrayList<Student> studentList = new ArrayList<>();
         String line, word;
 
         Scanner sc = new Scanner(new File(path));
         Verfication verification = new Verfication();
-        
         // parse first time
         if(sc.hasNextLine()){
             line = sc.nextLine();
@@ -70,17 +69,18 @@ public class Csv_Reader {
             boolean isValidOralOrPracticalMark = verification.isValidOralPracticalMark(activitiesMark, subject.getFullMark());
             
             double midTermMark = Double.parseDouble(wList[4]);
-            boolean isValidMidTermMark = verification.isValidMidtermExamMark(midTermMark, subject.getFullMark());
+            boolean isValidMidTermMark = verification.isValidMidtermExamsMark(midTermMark, subject.getFullMark());
             
             double finalMark = Double.parseDouble(wList[5]);
-            boolean isValidFinalMark = verification.isValidFullMark(finalMark);
-            
+            boolean isValidFinalMark = verification.isValidFinalExamMark(finalMark, subject.getFullMark());
+
             if(isValidName && isValidNumber && isValidActivitesMArk && isValidOralOrPracticalMark && isValidMidTermMark && isValidFinalMark){
                 Student st = new Student(name, number, activitiesMark, oralOrPracticalMark, midTermMark, finalMark);
                 studentList.add(st);
             }
         }
         sc.close();
+        System.out.println(studentList.size());
         return studentList;
     }
 }

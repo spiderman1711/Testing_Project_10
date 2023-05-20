@@ -42,6 +42,10 @@ public class Subject {
     public void setFullMark(double fullMark) {
         this.fullMark = fullMark;
     }
-    
+
+    @Override
+	public String toString() {
+		return subjectName +","+fullMark;
+	}
     
 }
