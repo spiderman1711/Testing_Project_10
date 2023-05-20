@@ -7,11 +7,10 @@
  import java.util.ArrayList;
  import models.Subject;
  
- /**
+ /*
   *
-  
-@author Youssef
-*/
+  *@author Youssef
+  */
 public class Testing_project_10 {
 
    public static void main(String[] args) throws FileNotFoundException {
