@@ -12,7 +12,7 @@ import models.Subject;
 
 public class Csv_Reader {
     
-    Subject getSubject(String path)  throws FileNotFoundException {
+    public Subject getSubject(String path)  throws FileNotFoundException {
         String line;
         Subject subject;
         
@@ -32,7 +32,7 @@ public class Csv_Reader {
     }
     
     
-    	public ArrayList<Student> csv_parsing(String path) throws FileNotFoundException {
+    ArrayList<Student> csv_parsing(String path) throws FileNotFoundException {
         Subject subject = new Subject("1", "1", 100);
         ArrayList<Student> studentList = new ArrayList<>();
         String line, word;
