@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import models.Student;
 /*
- * Tested Using Base Coverage
+ * Tested Using Basic path Coverage
  */
 class isValidGradeCalculator {
 
